@@ -1,0 +1,6 @@
+server:
+  listen_port: "9090"
+upstream:
+  etcd_endpoint: "localhost:2379"
+security:
+  block_maintenance_api: true

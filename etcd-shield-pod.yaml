@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secured-etcd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: etcd-shield-cluster
+  template:
+    metadata:
+      labels:
+        app: etcd-shield-cluster
+    spec:
+      containers:
+      # 1. The actual etcd server (listening locally inside the pod)
+      - name: etcd
+        image: quay.io/coreos/etcd:v3.5.9
+        ports:
+        - containerPort: 2379
+      # 2. Your Envoy proxy sidecar intercepting external traffic
+      - name: envoy-shield-proxy
+        image: yourusername/etcd-shield-envoy:latest
+        ports:
+        - containerPort: 9090
+      # 3. Your Go Firewall microservice
+      - name: shield-authz
+        image: yourusername/etcd-shield-backend:latest
+        ports:
+        - containerPort: 50051
