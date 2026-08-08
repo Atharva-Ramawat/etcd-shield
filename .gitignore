@@ -1,0 +1,28 @@
+# Binaries and build outputs
+/etcd-shield
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Go workspace and vendor files (uncomment vendor if not tracking dependencies)
+# vendor/
+go.work
+
+# IDE and Editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables and local secrets
+.env
+*.local
+
+# Docker override or local compose state files
+docker-compose.override.yml
+.docker/
