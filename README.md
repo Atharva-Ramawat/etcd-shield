@@ -1,4 +1,4 @@
-# 🛡️ etcd-shield
+# 🛡️etcd-shield
 
 **etcd-shield** is a zero-trust gRPC security proxy and authorization firewall designed to protect **etcd** clusters from unauthorized administrative and maintenance API calls.
 
