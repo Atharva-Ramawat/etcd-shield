@@ -9,4 +9,4 @@ FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /etcd-shield /etcd-shield
 COPY --from=builder /app/config.yaml ./config.yaml
-ENTRYPOINT ["/etcd-shield"]
+ENTRYPOINT ["/etcd-shield"
